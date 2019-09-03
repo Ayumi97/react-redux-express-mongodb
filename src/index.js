@@ -7,6 +7,9 @@ import Auth from './Auth';
 import Dashboard from './Dashboard';
 import reducers from './reducers';
 import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
+import './config';
+import 'antd-mobile/dist/antd-mobile.css';
+
 
 const reduxdevtools = window.devToolsExtension ? window.devToolsExtension() : f=>f
 const store = createStore(reducers, compose(
