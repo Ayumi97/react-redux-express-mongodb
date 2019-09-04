@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducers from './reducers';
-import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './config';
 import Register from './container/register/register';
 import Login from './container/login/login';
