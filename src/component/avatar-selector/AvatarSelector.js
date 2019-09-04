@@ -5,7 +5,8 @@ class AvatarSelector extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            
+            icon:'',
+            text:''
         }
     }
 
@@ -28,9 +29,9 @@ class AvatarSelector extends React.Component{
                     <Grid 
                         data={avatarList} 
                         columnNum={4}
-                        onClick={ele=>{
-                            this.setState(ele)
-                            this.props.selectAvatar(ele.text)
+                        onClick={elm=>{
+                            this.setState(elm)
+                            this.props.selectAvatar(elm.text)
                         }}
                     />
                 </List>
