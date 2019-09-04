@@ -29,7 +29,7 @@ Router.post('/register', function(req,res){
 Router.post('/login', function(req,res){
     console.log(req.body);
     const { user, pwd } = req.body;
-    User.findOne({user,pwd:md5Pwd(pwd)}, function(err,doc){
+    User.findOne({user,pwd:md5Pwd(pwd)}, {'pwd':0}, function(err,doc){
         console.log(doc);
         if(!doc){
             return res.json({code:1,msg:'用户不存在或者密码错误'})
