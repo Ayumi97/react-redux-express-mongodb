@@ -4,12 +4,13 @@ import {getredirectPath} from '../util';
 const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 const ERROR_MSG = 'ERROR_MSG';
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+const LOAD_DATA = 'LOAD_DATA';
 const initState = {
     redirectTo:'',
     msg:'',
     isAuth: false,
     user:'',
-    pwd:'',
+    // pwd:'',
     type:''
 }
 
@@ -20,6 +21,8 @@ export function user(state=initState, action){
             return {...state,msg:'',redirectTo:getredirectPath(action.payload),isAuth:true,...action.payload}
         case LOGIN_SUCCESS:
             return {...state,msg:'',redirectTo:getredirectPath(action.payload),isAuth:true,...action.payload}
+        case LOAD_DATA:
+            return {...state,...action.payload}
         case ERROR_MSG:
             return {...state, isAuth:false,msg:action.msg}
         default:
@@ -39,6 +42,7 @@ function registerSuccess(data){
         payload:data
     }
 }
+
 export function register({user,pwd,repeatpwd,type}){
     if(!user || !pwd || !type) {
         return errorMsg('用户名密码必须输入')
@@ -79,5 +83,11 @@ export function login({user,pwd}){
                     dispatch(errorMsg(res.data.msg))
                 }
             })
+    }
+}
+export function loadData(userinfo){
+    return {
+        type:LOAD_DATA,
+        payload:userinfo
     }
 }
