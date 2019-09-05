@@ -15,10 +15,10 @@ class AvatarSelector extends React.Component{
     }
 
     render(){
-        const avatarList = 'face016,face072,face100,face126,face131,face139,face143,face151,face169,face181,face187,face188'
+        const avatarList = 'woman1,woman2,woman3,woman4,woman6,woman7,man1,man2,man3,man4,man5,man6,man7,man8,man11,man12,man13,man14,man15,man16'
                             .split(',')
                             .map(v=>({
-                                icon:require(`../img/${v}.gif`),
+                                icon:require(`../img/${v}.png`),
                                 text:v
                             }));
         const gridHeader = this.state.icon
@@ -32,7 +32,7 @@ class AvatarSelector extends React.Component{
                 <List renderHeader={()=>gridHeader}>
                     <Grid 
                         data={avatarList} 
-                        columnNum={4}
+                        columnNum={5}
                         onClick={elm=>{
                             this.setState(elm)
                             this.props.selectAvatar(elm.text)
