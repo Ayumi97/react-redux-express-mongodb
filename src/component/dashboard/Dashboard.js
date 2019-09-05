@@ -4,13 +4,9 @@ import {NavBar} from 'antd-mobile';
 import { Switch, Route } from 'react-router-dom';
 import NavLinkBar from '../navlink/NavLink';
 import Boss from '../boss/Boss';
+import Genius from '../genius/Genius';
 
-// function Boss(){
-//     return <h2>Boss首页</h2>
-// }
-function Genius(){
-    return <h2>Genius首页</h2>
-}
+
 function Msg(){
     return <h2>消息列表</h2>
 }
