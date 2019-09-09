@@ -26,4 +26,7 @@ fixd-header.am-navbar{
 }
 .stick-footer{
     z-index: 10;
+    width: 100%;
+    position: fixed;
+    bottom: 0
 }
