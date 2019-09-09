@@ -5,7 +5,20 @@ import { List, InputItem, WingBlank, WhiteSpace, Button} from 'antd-mobile';
 import { connect } from 'react-redux';
 import { login } from '../../redux/user.redux';
 
+function hello(){
+    console.log('hello')
+}
 
+function WrapperHello(fn){
+    return function(){
+        console.log('before say helle')
+        fn()
+        console.log('after hello')
+    }
+}
+
+hello = WrapperHello(hello)
+hello()
 @connect(
     state=>state.user,
     { login }
