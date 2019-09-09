@@ -15,22 +15,18 @@ class Chat extends React.Component{
         this.state={text:'',msg:[]}
     }
     componentDidMount(){
-        this.props.getMsgList();
-        this.props.recvMsg()
-        // socket.on('recvmsg', (data)=>{
-        //     this.setState({
-        //         msg:[...this.state.msg,data.text]
-        //     })
-        // })
+        // this.props.getMsgList();
+        // this.props.recvMsg()
+       
     }
     handleSubmit(){
-        // socket.emit('sendmsg',{text:this.state.text})
-        // this.setState({text:''})
+       
         const from = this.props.user._id;
-        console.log(this.props.user)
-        console.log(this.props.match)
+        
         const to = this.props.match.params.user;
         const msg = this.state.text;
+        console.log('from:',from);
+        console.log('to:',to)
         this.props.sendMsg({from,to,msg});
         this.setState({text:''})
     }
