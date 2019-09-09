@@ -14,19 +14,8 @@ import YForm from '../../component/y-form/YForm';
 class Register extends React.Component{
     constructor(props){
         super(props)
-        // this.state = {
-        //     user:'',
-        //     pwd:'',
-        //     repeatpwd:'',
-        //     type:'genius'   //or boss
-        // }
         this.handleRegister = this.handleRegister.bind(this)
     }
-    // handleChange(key,val){
-    //     this.setState({
-    //         [key]:val
-    //     })
-    // }
     componentDidMount(){
         this.props.handleChange('type','genius')
     }
