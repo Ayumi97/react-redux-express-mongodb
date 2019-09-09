@@ -5,20 +5,32 @@ import { List, InputItem, WingBlank, WhiteSpace, Button} from 'antd-mobile';
 import { connect } from 'react-redux';
 import { login } from '../../redux/user.redux';
 
-function hello(){
-    console.log('hello')
-}
 
-function WrapperHello(fn){
-    return function(){
-        console.log('before say helle')
-        fn()
-        console.log('after hello')
+//属性代理功能
+function WrapperHello(Comp){
+    class WrapComp extends React.Component{
+        render(){
+            return(
+                <div>
+                    <p>这是一个高阶组件特有的元素</p>
+                    <Comp {...this.props}> </Comp>
+                </div>
+            )
+        }
+    }
+    return WrapComp
+}
+@WrapperHello
+class Hello extends React.Component{
+    render(){
+        return(
+            <h2>hello i love music</h2>
+        )
     }
 }
+// Hello = WrapperHello(Hello)
 
-hello = WrapperHello(hello)
-hello()
+
 @connect(
     state=>state.user,
     { login }
@@ -49,7 +61,8 @@ class Login extends React.Component{
     render(){
         return(
             <div>
-                {this.props.redirectTo&&this.props.redirectTo!='/login' ? <Redirect to={this.props.redirectTo} /> : null}               
+                <Hello />
+                {this.props.redirectTo&&this.props.redirectTo!=='/login' ? <Redirect to={this.props.redirectTo} /> : null}               
                 <Logo />
                 <h2>登录页</h2>
                 <WingBlank>
