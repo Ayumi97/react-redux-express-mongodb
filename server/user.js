@@ -16,7 +16,6 @@ Router.get('/list',function(req,res){
 })
 Router.get('/getmsglist',function(req,res){
     const user = req.cookies.userId;
-    // console.log('user:',user,req.cookies)
     // {'$or':[{from:user,to:user}]}
     User.find({},function(e,userdoc){
         let users = {};
