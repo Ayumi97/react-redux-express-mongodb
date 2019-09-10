@@ -15,12 +15,22 @@ Router.get('/list',function(req,res){
     })
 })
 Router.get('/getmsglist',function(req,res){
-    const user = req.cookies.user
+    const user = req.cookies.userId;
+    // console.log('user:',user,req.cookies)
     // {'$or':[{from:user,to:user}]}
-    Chat.find({},function(err,doc){
-        if(!err){
-            return res.json({code:0,msgs:doc})
-        }
+    User.find({},function(e,userdoc){
+        let users = {};
+        userdoc.forEach(v=>{
+            users[v._id] = {name:v.user, avatar:v.avatar}
+        })
+        Chat.find({'$or':[{from:user},{to:user}]},function(err,doc){
+            if(!err){
+                return res.json({code:0,msgs:doc,users:users})
+            }
+            else{
+                return res.json({code:1,err})
+            }
+        })
     })
 })
 Router.post('/register', function(req,res){
