@@ -13,7 +13,8 @@ class Msg extends React.Component{
         // 按照聊天用户分组，根据chatid
         const msgGroup = {};
         this.props.chat.chatmsg.forEach(v=>{
-            msgGroup[v.chatid] = msgGroup[v.chatid] || []
+            msgGroup[v.chatid] = msgGroup[v.chatid] || [];
+            msgGroup[v.chatid].push(v);
         })
         console.log(msgGroup)
         return(
