@@ -24,7 +24,11 @@ class Msg extends React.Component{
             msgGroup[v.chatid].push(v);
         })
         // console.log(msgGroup)
-        const chatList = Object.values(msgGroup);
+        const chatList = Object.values(msgGroup).sort((a,b)=>{
+            const a_last = this.getLast(a).create_time;
+            const b_last = this.getLast(b).create_time;
+            return b_last - a_last
+        });
         const Item = List.Item;
         const Brief = Item.Brief;
         const userId = this.props.user._id;

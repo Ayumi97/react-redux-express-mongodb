@@ -45,16 +45,16 @@ function msgRecv(msg,userid){
 export function recvMsg(){
     return (dispatch, getState)=>{
         socket.on('recvmsg', function(data){
-            console.log(data);
+            // console.log(data);
             const userid = getState().user._id;
             dispatch(msgRecv(data,userid))
         })
     }
 }
 
-export function sendMsg({from,to,msg}){
+export function sendMsg({from,to,msg,create_time}){
     return dispatch=>{
-        socket.emit('sendmsg',{from,to,msg})
+        socket.emit('sendmsg',{from,to,msg,create_time})
     }
 }
 
@@ -64,7 +64,7 @@ export function getMsgList(){
             .then(res=>{
                 if(res.status===200 && res.data.code===0){
                     const userid = getState().user._id;
-                    console.log('getState:',getState())
+                    // console.log('getState:',getState())
                     dispatch(msgList(res.data.msgs, res.data.users, userid))
                 }
             })

@@ -32,9 +32,10 @@ class Chat extends React.Component{
         
         const to = this.props.match.params.user;
         const msg = this.state.text;
+        const create_time = (new Date().getTime());
         console.log('from:',from);
         console.log('to:',to)
-        this.props.sendMsg({from,to,msg});
+        this.props.sendMsg({from,to,msg,create_time});
         this.setState({
             text:'',
             showEmoji:false
