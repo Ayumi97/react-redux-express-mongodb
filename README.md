@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-项目结构 
+### 项目结构 
  
  ```
  |--config
@@ -44,30 +44,30 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
  |--.gitignore
 
 ```
-## create-react-app    脚手架创建react项目  
+### create-react-app    脚手架创建react项目  
 
-## npm install redux --save  
+### npm install redux --save  
 
-## npm run eject
+### npm run eject
 
-## npm install express --save
+### npm install express --save
 
-## npm install -g nodemon
+### npm install -g nodemon
 
-## npm install mongoose --save
+### npm install mongoose --save
 
-### Mac 安装mongo: brew install mongodb ;      启动: brew service start mongodb.
+##### Mac 安装mongo: brew install mongodb ;      启动: brew service start mongodb.
 
-### mongoose
+#### mongoose
 
 * 定义文档模型，Schema和model新建模型.  
 * 一个数据库文档对应一个模型。通过模型对数据库进行操作。  
 * Connect连接  
-### mongod --config /usr/local/etc/mongod.conf 后台启动
+##### mongod --config /usr/local/etc/mongod.conf 后台启动
 
-## npm install babel-plugin-transform-decorators-legacy
+### npm install babel-plugin-transform-decorators-legacy
 
-### package.json里 babel加上plugin配置：
+##### package.json里 babel加上plugin配置：
 `[
   "@babel/plugin-proposal-decorators",
   {
@@ -75,15 +75,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   }
 ]`
 
-## npm install body-parser --save
+### npm install body-parser --save
 
-### express使用body-parser支持post参数
+##### express使用body-parser支持post参数
 
-## npm install react-router-dom --save
+### npm install react-router-dom --save
 
-## npm install prop-types —save 属性类型检测
+### npm install prop-types —save 属性类型检测
 
-## Npm install browser-cookies  —save 方便管理cookie
+### Npm install browser-cookies  —save 方便管理cookie
 
 ```
 
